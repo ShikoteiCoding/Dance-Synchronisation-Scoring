@@ -6,8 +6,12 @@
 
     <div class="drop-zone">
         <span class="drop-zone__prompt">Drop video here or click to upload</span>
-        <input type="file" name="myFile" class="drop-zone__input">
+        <input type="file" name="myFile" class="drop-zone__input" accept="video/*">
     </div>
+
+    <button type="button" class="btn btn-primary" onClick="runPoseNet()">Start</button>
+
+<!--    <video controls class="video"></video>-->
 
     <main></main>
 
@@ -17,8 +21,12 @@
 
 
 {% block scripts %}
-    <script defer src="{{url_for('static', filename='js/sketch_app.js')}}"></script>
-    <script defer src="{{url_for('static', filename='js/scripts_app.js')}}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+
+<!--    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>-->
+    <script defer src="{{url_for('static', filename='js/sketch_app.js')}}"></script>
+    <script defer src="{{url_for('static', filename='js/scripts_app.js')}}"></script>
 {% endblock %}
